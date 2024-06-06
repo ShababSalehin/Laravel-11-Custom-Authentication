@@ -16,17 +16,14 @@
     </div>
     <div class="form-group">
         <label for="email">Email:</label>
-        <input type="email" id="email" name="email" value="{{ auth()->user()->email }}">
-        @error("email")
-        <div class="error">{{ $message }}</div>
-        @enderror
+        <input type="email" id="email" name="email" value="{{ auth()->user()->email }}" disabled>
     </div>
     <div class="form-group">
         <label for="phone">Phone:</label>
-        <input type="tel" id="phone" name="phone" value="{{ auth()->user()->phone }}" disabled>
-        {{-- @error("phone")
+        <input type="tel" id="phone" name="phone" value="{{ auth()->user()->phone }}">
+        @error("phone")
             <div class="error">{{ $message }}</div>
-        @enderror --}}
+        @enderror
     </div>
     <div class="form-group">
         <button type="submit">Save Changes</button>

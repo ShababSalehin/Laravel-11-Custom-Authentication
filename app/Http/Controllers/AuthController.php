@@ -87,7 +87,7 @@ class AuthController extends Controller
 
             $request->validate([
                 "name" => "required|string",
-                "phone" => "required"
+                "email" => "required|email"
             ]);
 
             $id = auth()->user()->id; // Logged In userID
@@ -95,7 +95,7 @@ class AuthController extends Controller
             $user = User::findOrFail($id);
 
             $user->name = $request->name;
-            $user->phone = $request->phone;
+            $user->email = $request->email;
             $user->save();
 
             return to_route("profile")->with("success", "Successfully, profile updated");
